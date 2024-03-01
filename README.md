@@ -1,69 +1,27 @@
-### The Game Project 6 – Adding game mechanics
+Overview
+The 2D side scrolling game is a simple platformer where the player controls a character moving across a horizontally scrolling environment. The objective of the game is to navigate through obstacles, collect tokens, and reach the flagpole at the end of the level while avoiding enemies and falling into canyons. The game features basic mechanics such as moving left and right, jumping, collision detection, and score tracking.
 
-This week’s project builds upon the sketch from last week. Before
-starting this project make sure you have completed all steps from last
-week and tested your game thoroughly.
+Features
+Player Control: The player can move the character left or right using the arrow keys. The character can also jump using the spacebar or the up arrow key.
 
-Create a copy of your sketch directory from last week and rename it to
-something like `game-project-6`. Keep your completed project from last
-week safe as a reference, and make the following changes to the code
-in your new game directory.
+Obstacles: Canyons act as obstacles in the game. If the player falls into a canyon, they lose a life.
 
-1. Add a score counter [1 marks]
+Collectables: Tokens are scattered throughout the level. When the player collects a token, their score increases.
 
-   - create a global variable called `game_score`
-   - increment `game_score` by one each time the character collects an item.
-   - use the text function to draw the score on the screen.
+Flagpole: The flagpole marks the end of the level. When the player reaches the flagpole, the level is completed.
 
-2. Add a flagpole [1 marks]
+Enemies: Enemies move horizontally across the screen. If the player comes into contact with an enemy, they lose a life.
 
-   - We need to add an end to your level. I have chosen a flagpole but you can chose according to the theme of your game.
-   - Initialise an object called `flagpole`, it should at least have the properties `x_pos` and `isReached`.
-   - set `isReached` to `false` and `x_pos` to a world position at the very end of your level.
-   - create a function called `renderFlagpole` and call this from the draw function
-   - complete the function to draw your flagpole in two states. One for when `isReached` is false,
-     and one for when it is `true`
+Score Tracking: The game keeps track of the player's score, which increases when tokens are collected.
 
-3. Flagpole checking function [1 marks]
+Lives System: The player starts with a certain number of lives. Falling into a canyon or coming into contact with an enemy decreases the number of lives. The game ends when the player runs out of lives.
 
-   - create a function called `checkFlagpole`
-   - call the function from `draw`, but write a conditional so that `checkFlagpole` is only called when `flagpole.isReached` is `false`
-   - in `checkFlagpole` write a conditional such that when the gameChar is in range of the flagpole
-     its `isReached` property is set to `true`
+How to Run
+To run the game, follow these steps:
 
-4. Add lives [2 marks]
-
-   - Your character should begin with three lives, and each time they fall down a canyon the game
-     should reset and their remaining lives decrement by one.
-   - Create a global variable `lives`, and initialise it to `3` within `setup`.
-   - Create a function called `checkPlayerDie`. Call this within draw.
-   - In this function define a conditional statement that tests if your character has fallen below
-     the bottom of the canvas. When this is `true`, decrement the `lives` counter by one
-   - Create a new function called `startGame()`.
-   - Move everything from `setup` except `createCanvas` and the initialisation of `floorPos_y` and `lives` into this new function.
-   - At the end of your now very short `setup` function call `startGame()`.
-   - In `checkPlayerDie` create a conditional statement to test if the player has
-     used all of their lives. If there are lives remaining call `startGame`.
-   - Write some code using a `for` loop to draw life tokens onto the screen so that you
-     can keep track of how many lives you have remaining.
-
-5. "Game over" and "Level complete" text [2 marks]
-
-   - In the draw loop, after your drawing code and before your game logic
-     code, write two conditional statements
-   - The first displays "Game over. Press space to continue."
-     when `lives` is less than 1.
-   - The other displays "Level complete. Press space to continue." when
-     `flagpole.isReached` is true
-   - For each conditional you should return at the end of the statement. This
-     prevents any further game logic from happening when play is over.
-
-   6. Tidy your code [3 marks]
-
-   - make sure your code is elegant
-     - remove all commented blocks of code
-     - check all indentations
-     - make your variable names consistent
-     - remove any redundant code
-     - refactor unwieldy drawing code
-     - break up long commands onto multiple lines
+Clone or download the repository to your local machine.
+Open the index.html file in a web browser that supports JavaScript.
+Use the arrow keys to move left or right, and use the spacebar or up arrow key to jump.
+Navigate through the level, collect tokens, and reach the flagpole to complete the level.
+Credits
+This game was developed by Ba Nguyen. It utilizes the p5.js library for graphics and animation. Some aspects of the game, such as collision detection and platform creation, were inspired by online tutorials and resources.
