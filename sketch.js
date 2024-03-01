@@ -1,14 +1,6 @@
 /*
 
 The Game Project
-
-part 6
-
-Adding Game  Mechanics
-
-//ALL CODE WRITTEN BELOW ARE WRITTEN WITHOUT ASSISTANCE 
-//EXCEPT FOR THE PARTS THAT WERE GONE OVER ON COURSERA
-
 */
 var isLeft;
 var isRight;
